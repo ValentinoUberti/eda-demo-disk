@@ -1,0 +1,21 @@
+---
+- name: "Listen for newly added ServiceAccount resources"
+  hosts: all
+  sources:
+    - sabre1041.eda.k8s:
+        api_version: v1
+        kind: ServiceAccount
+        namespace: demo-sa
+  rules:
+    - name: Notify
+      condition: event.type == "ADDED"
+      action:
+        run_job_template:
+          name: "Show SA token"
+          organization: "Infrastructure"
+          job_args:
+            extra_vars:
+              namespace: "{{ event.resource.metadata.namespace }}"
+              sa_name: "{{ event.resource.metadata.name }}"
+            
+             
