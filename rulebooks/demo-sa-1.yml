@@ -13,6 +13,7 @@
         run_job_template:
           name: "Show SA token"
           organization: "Infrastructure"
+          retries: 10
           job_args:
             extra_vars:
               namespace: "{{ event.resource.metadata.namespace }}"
