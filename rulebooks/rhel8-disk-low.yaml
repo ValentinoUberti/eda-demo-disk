@@ -1,5 +1,5 @@
 ---
-- name: Automatic Remediation from Alert Manager
+- name: Automatic low disk Remediation from Alert Manager
   hosts: all
   sources:
     - name: Listen for alerts from Alert Manager
