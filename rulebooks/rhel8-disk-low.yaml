@@ -13,6 +13,4 @@
         run_job_template:
           name: "EDA Automated Response to LowDiskSpaceDetected"
           organization: "Infrastructure"
-          job_args:
-            extra_vars:
-              vm_name: "{{ event.alert.labels.job }}"
+          
