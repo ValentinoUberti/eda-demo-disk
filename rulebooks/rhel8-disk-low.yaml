@@ -9,7 +9,7 @@
   rules:
     - name: LowDiskSpaceDetected
       condition: 
-      action: event.payload
+      action: 1 == 1
         run_job_template:
           name: "EDA Automated Response to LowDiskSpaceDetected"
           organization: "Infrastructure"
