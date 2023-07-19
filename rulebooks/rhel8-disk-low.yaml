@@ -8,8 +8,8 @@
         port: 8000
   rules:
     - name: LowDiskSpaceDetected
-      condition: 1 == 1
-      action:
+      condition: 
+      action: event.payload
         run_job_template:
           name: "EDA Automated Response to LowDiskSpaceDetected"
           organization: "Infrastructure"
